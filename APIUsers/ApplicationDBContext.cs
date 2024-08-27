@@ -7,10 +7,18 @@ namespace APIUsers
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-JRR96T5;
+            //optionsBuilder.UseSqlServer(@"Server=DESKTOP-JRR96T5;
+            //                              Database=eComm;
+            //                              Trusted_Connection=True;
+            //                              TrustServerCertificate=True;");
+
+            optionsBuilder.UseSqlServer(@"Server=192.168.1.47, 1433;
                                           Database=eComm;
-                                          Trusted_Connection=True;
-                                          TrustServerCertificate=True;");
+                                          User Id=sa;
+                                          Password=Password1!;
+                                          TrustServerCertificate=true;                                         
+                                          MultipleActiveResultSets=true");
+
             base.OnConfiguring(optionsBuilder);
         }
 

@@ -1,5 +1,6 @@
 using APIUsers.Services;
-using Core.Domain.Interface;
+using Core.Domain.Repository;
+using Core.Domain.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,10 +11,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IUser, UserService>();
+builder.Services.AddScoped<IUserRepository, UserService>();
 
 var app = builder.Build();
 
+app.UseCors(builder => builder
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader());
 
 
 // Configure the HTTP request pipeline.

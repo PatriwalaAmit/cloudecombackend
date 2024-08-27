@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using APIUsers;
 using Core.Domain.Entities;
-using Core.Domain.Interface;
+using Core.Domain.Repository;
 
 namespace APIUsers.Controllers
 {
@@ -15,9 +15,9 @@ namespace APIUsers.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly IUser _userService;
+        private readonly IUserRepository _userService;
 
-        public UsersController(IUser userService)
+        public UsersController(IUserRepository userService)
         {
             _userService = userService;
         }

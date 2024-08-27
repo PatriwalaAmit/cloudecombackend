@@ -1,10 +1,10 @@
 ﻿using Core.Domain.Entities;
-using Core.Domain.Interface;
+using Core.Domain.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace APIUsers.Services
 {
-    public class UserService : IUser
+    public class UserService : IUserRepository
     {
 
         private ApplicationDBContext _context;

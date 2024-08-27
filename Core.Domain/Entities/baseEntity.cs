@@ -9,9 +9,9 @@ namespace Core.Domain.Entities
     public class baseEntity
     {
         public int Id { get; set; }
-        public bool IsDeleted { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public string CreatedBy { get; set; }
-        public int Status { get; set; }
+        public bool IsDeleted { get; set; } = false;
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public string? CreatedBy { get; set; } = "SYSTEM";
+        public int Status { get; set; } = 0; /* 0 insert, 1 updated, 2 inactive */
     }
 }

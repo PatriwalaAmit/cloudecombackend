@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Domain.Interface
+namespace Core.Domain.Repository
 {
-    public interface IUser
+    public interface IUserRepository
     {
         // Return list of Users
         Task<List<Users>> GetAllUsers();        
