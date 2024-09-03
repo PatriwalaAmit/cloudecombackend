@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIProducts", "APIProducts\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIOrders", "APIOrders\APIOrders.csproj", "{DE681562-A76F-4AE1-AC85-411E9ED765AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Domain", "Core.Domain\Core.Domain.csproj", "{428BAA5B-CB05-43BB-99F0-C68D2F40BF20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Domain", "Core.Domain\Core.Domain.csproj", "{428BAA5B-CB05-43BB-99F0-C68D2F40BF20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualMeetingAdmin", "VirtualMeetingAdmin\VirtualMeetingAdmin.csproj", "{094DD4F2-D3ED-4C6B-A7AB-47A09F6F916D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{428BAA5B-CB05-43BB-99F0-C68D2F40BF20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{428BAA5B-CB05-43BB-99F0-C68D2F40BF20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{428BAA5B-CB05-43BB-99F0-C68D2F40BF20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{094DD4F2-D3ED-4C6B-A7AB-47A09F6F916D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{094DD4F2-D3ED-4C6B-A7AB-47A09F6F916D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{094DD4F2-D3ED-4C6B-A7AB-47A09F6F916D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{094DD4F2-D3ED-4C6B-A7AB-47A09F6F916D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
