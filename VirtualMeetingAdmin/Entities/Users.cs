@@ -15,6 +15,14 @@ namespace VirtualMeetingAdmin.Entities
         public string? Address { get; set; } = string.Empty;
     }
 
+    public class  UserLogin
+    {
+        [Required]        
+        public string UserName { get; set; }
+        [Required]        
+        public string Password { get; set; }
+    }
+
     //public class UsersViewModel
     //{
     //    public List<Users>? _Users { get; set; }

@@ -28,10 +28,18 @@ namespace VirtualMeetingAdmin.Controllers
             ViewData["DateSortParm"] = sortOrder == "CreatedDate_ASC" ? "CreatedDate_DESC" : "CreatedDate_ASC";
 
             ViewData["filterUser"] = filterUser;
+            ViewData["CurrentFilter"] = filterUser;
+            ViewData["CurrentSort"] = sortOrder;
 
             int pageSize = 5;
 
             var users = from u in _context.Users select u;
+
+            /*let check whether user login or not*/
+            var loginUser = HttpContext.Session.GetObject<Users>("userLogin");
+
+            if (loginUser != null)
+                users = users.Where(u => u.Id == loginUser.Id);
 
             if (string.IsNullOrEmpty(filterUser))
                 users = users.Where(u => (u.Status == 0 || u.Status == 1));
@@ -57,10 +65,10 @@ namespace VirtualMeetingAdmin.Controllers
                 case "CreatedDate_DESC":
                     users = users.OrderByDescending(u => u.CreatedDate);
                     break;
-            }           
+            }
 
             return View(await PaginatedList<Users>.CreateAsync(users.AsNoTracking(), pageNumber ?? 1, pageSize));
-        }       
+        }
 
         // GET: Users/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -203,5 +211,6 @@ namespace VirtualMeetingAdmin.Controllers
         {
             return _context.Users.Any(e => e.Id == id);
         }
+
     }
 }
