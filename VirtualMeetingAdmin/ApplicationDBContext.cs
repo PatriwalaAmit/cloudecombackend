@@ -3,12 +3,11 @@ using Microsoft.Extensions.Configuration;
 
 namespace VirtualMeetingAdmin
 {
-    //public class ApplicationDBContext : DbContext
-    //{
-    //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    //    {
-    //        optionsBuilder.UseSqlServer(GetConnectionString("VMConnection"));
-    //        base.OnConfiguring(optionsBuilder);
-    //    }
-    //}
+    public class ApplicationDBContext : DbContext
+    {
+        public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options)
+                   : base(options)
+        {
+        }
+    }
 }

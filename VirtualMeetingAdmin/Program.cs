@@ -4,7 +4,8 @@ using VirtualMeetingAdmin.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<UserContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("VMConnection")));
+var connectionString = builder.Configuration.GetConnectionString("VMConnection");
+builder.Services.AddDbContext<UserContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 // Add services to the container.
